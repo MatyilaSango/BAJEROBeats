@@ -7,9 +7,7 @@ package Entities;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,14 +15,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -39,7 +35,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Products.findByName", query = "SELECT p FROM Products p WHERE p.name = :name")
     , @NamedQuery(name = "Products.findByDateposted", query = "SELECT p FROM Products p WHERE p.dateposted = :dateposted")
     , @NamedQuery(name = "Products.findByCost", query = "SELECT p FROM Products p WHERE p.cost = :cost")
-    , @NamedQuery(name = "Products.findByA", query = "SELECT p FROM Products p WHERE p.a = :a")
+    , @NamedQuery(name = "Products.findByDownloadno", query = "SELECT p FROM Products p WHERE p.downloadno = :downloadno")
     , @NamedQuery(name = "Products.findByPiclink", query = "SELECT p FROM Products p WHERE p.piclink = :piclink")
     , @NamedQuery(name = "Products.findByDownloadlink", query = "SELECT p FROM Products p WHERE p.downloadlink = :downloadlink")})
 public class Products implements Serializable {
@@ -66,8 +62,8 @@ public class Products implements Serializable {
     private int cost;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "")
-    private int a;
+    @Column(name = "Download no")
+    private int downloadno;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 500)
@@ -78,10 +74,6 @@ public class Products implements Serializable {
     @Size(min = 1, max = 500)
     @Column(name = "Download link")
     private String downloadlink;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
-    private List<Mylist> mylistList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
-    private List<Cart> cartList;
 
     public Products() {
     }
@@ -90,12 +82,12 @@ public class Products implements Serializable {
         this.id = id;
     }
 
-    public Products(Integer id, String name, Date dateposted, int cost, int a, String piclink, String downloadlink) {
+    public Products(Integer id, String name, Date dateposted, int cost, int downloadno, String piclink, String downloadlink) {
         this.id = id;
         this.name = name;
         this.dateposted = dateposted;
         this.cost = cost;
-        this.a = a;
+        this.downloadno = downloadno;
         this.piclink = piclink;
         this.downloadlink = downloadlink;
     }
@@ -132,12 +124,12 @@ public class Products implements Serializable {
         this.cost = cost;
     }
 
-    public int getA() {
-        return a;
+    public int getDownloadno() {
+        return downloadno;
     }
 
-    public void setA(int a) {
-        this.a = a;
+    public void setDownloadno(int downloadno) {
+        this.downloadno = downloadno;
     }
 
     public String getPiclink() {
@@ -154,24 +146,6 @@ public class Products implements Serializable {
 
     public void setDownloadlink(String downloadlink) {
         this.downloadlink = downloadlink;
-    }
-
-    @XmlTransient
-    public List<Mylist> getMylistList() {
-        return mylistList;
-    }
-
-    public void setMylistList(List<Mylist> mylistList) {
-        this.mylistList = mylistList;
-    }
-
-    @XmlTransient
-    public List<Cart> getCartList() {
-        return cartList;
-    }
-
-    public void setCartList(List<Cart> cartList) {
-        this.cartList = cartList;
     }
 
     @Override

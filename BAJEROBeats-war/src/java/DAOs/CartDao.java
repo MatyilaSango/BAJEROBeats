@@ -99,8 +99,12 @@ public class CartDao {
         myProduct.setStatus("Bought");
         myProduct.setDatebought(new Date());
         
+        product.setDownloadno(product.getDownloadno() + 1);
+        myProduct.setProductId(product);
+        
         em.getTransaction().begin();
         em.merge(myProduct);
+        em.merge(product);
         em.getTransaction().commit();
         em.clear();
         em.close();

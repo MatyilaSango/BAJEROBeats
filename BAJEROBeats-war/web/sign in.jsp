@@ -1,3 +1,9 @@
+<%-- 
+    Document   : sign in
+    Created on : Jul 30, 2022, 8:23:49 PM
+    Author     : Sango
+--%>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -42,7 +48,7 @@ and open the template in the editor.
                             <span style="font-size: 25px;"><b>SIGN IN</b></span>
                         </div>
                         <div class="sign-in-details">
-                            <form action="Sign_In" method="post">
+                            <form action="" method="post">
                                 <div class="con">
                                     <div class="sign-in-details-container">
                                         <img src="icons/icons8_user_50px_1.png" rel="pic" width="25px" height="25px" alt="pic" />
@@ -71,9 +77,10 @@ and open the template in the editor.
             </div>
             <div class="row footer">
                 <div class="footer col-lg-12 col-md-12 col-sm-12">
-                    <span style="color: white; font-size: 15px;">Â©2022, BAJEROBeats</span>
+                    <span style="color: white; font-size: 15px;">©2022, BAJEROBeats</span>
                 </div>
             </div>
         </div>
     </body>
 </html>
+

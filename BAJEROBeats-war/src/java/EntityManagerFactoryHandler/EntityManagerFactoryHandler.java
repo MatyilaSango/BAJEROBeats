@@ -14,7 +14,7 @@ import javax.persistence.Persistence;
  */
 public class EntityManagerFactoryHandler {
 
-    private static final EntityManagerFactory EMF = Persistence.createEntityManagerFactory("SAN7Beats_Website-warPU");
+    private static final EntityManagerFactory EMF = Persistence.createEntityManagerFactory("BAJEROBeats-warPU");
 
     private EntityManagerFactoryHandler() {
     }

@@ -7,7 +7,9 @@ package Entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,12 +17,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -74,6 +78,10 @@ public class Products implements Serializable {
     @Size(min = 1, max = 500)
     @Column(name = "Download link")
     private String downloadlink;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
+    private List<Mylist> mylistList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
+    private List<Cart> cartList;
 
     public Products() {
     }
@@ -146,6 +154,24 @@ public class Products implements Serializable {
 
     public void setDownloadlink(String downloadlink) {
         this.downloadlink = downloadlink;
+    }
+
+    @XmlTransient
+    public List<Mylist> getMylistList() {
+        return mylistList;
+    }
+
+    public void setMylistList(List<Mylist> mylistList) {
+        this.mylistList = mylistList;
+    }
+
+    @XmlTransient
+    public List<Cart> getCartList() {
+        return cartList;
+    }
+
+    public void setCartList(List<Cart> cartList) {
+        this.cartList = cartList;
     }
 
     @Override

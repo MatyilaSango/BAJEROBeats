@@ -32,7 +32,7 @@ body::-webkit-scrollbar{
     color: red;
     transition: 0.5s;
 }
-.log-in-body{
+.log-in-body, .start-container{
     height: calc(100vh - 75px);
     background-image: linear-gradient(to bottom, white, #EEF2F5);
 }
@@ -83,6 +83,7 @@ body::-webkit-scrollbar{
     width: 50%;
     display: flex;
     justify-content: center;
+    margin-top: 15px;
 }
 .sign-in-btn{
     background: red;
@@ -109,6 +110,39 @@ body::-webkit-scrollbar{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.error-message{
+    position: relative;
+    width: 100%;
+    top: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.start-container,.redirector{
+    height: calc(100vh - 25px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.redirector{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 60px;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.redirector a{
+    text-decoration: none;
+}
+.redirector:hover{
+    background: red;
+    color: white;
+    transition: 0.5s;
+    transform-style: flat;
 }
 
 

@@ -52,10 +52,12 @@ public class Sign_In extends HttpServlet {
             try{
                 UserDao userdao = new UserDao();
                 Users user = userdao.findUser(username, password);
+                request.setAttribute("user", user.getUsername());
+                //this.getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
                 
             }catch(Exception e){
                 request.setAttribute("error", "Incorrect username or password!");
-                this.getServletContext().getRequestDispatcher("/sign_in.jsp").forward(request, response);
+                this.getServletContext().getRequestDispatcher("/sign in.jsp").forward(request, response);
             }
         }
     }

@@ -1,8 +1,8 @@
-<%-- 
+<!-- 
     Document   : sign in
     Created on : Jul 30, 2022, 8:23:49 PM
     Author     : Sango
---%>
+-->
 
 <!DOCTYPE html>
 <!--
@@ -48,7 +48,7 @@ and open the template in the editor.
                             <span style="font-size: 25px;"><b>SIGN IN</b></span>
                         </div>
                         <div class="sign-in-details">
-                            <form action="" method="post">
+                            <form action="Sign_In" method="post">
                                 <div class="con">
                                     <div class="sign-in-details-container">
                                         <img src="icons/icons8_user_50px_1.png" rel="pic" width="25px" height="25px" alt="pic" />
@@ -60,6 +60,10 @@ and open the template in the editor.
                                         <img src="icons/icons8_lock_50px.png" rel="pic" width="25px" height="25px" alt="pic" />
                                         <input type="password" placeholder="Password" required name="password" />
                                         <a href="" ><span style="font-size: 10px; color: black;">FORGOT PASSWORD</span></a>
+                                        <div class="error-message">
+                                            <span style="color: red; font-size: 10px;">{error}</span>
+                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="con">
@@ -77,7 +81,7 @@ and open the template in the editor.
             </div>
             <div class="row footer">
                 <div class="footer col-lg-12 col-md-12 col-sm-12">
-                    <span style="color: white; font-size: 15px;">©2022, BAJEROBeats</span>
+                    <span style="color: white; font-size: 15px;">ï¿½2022, BAJEROBeats</span>
                 </div>
             </div>
         </div>

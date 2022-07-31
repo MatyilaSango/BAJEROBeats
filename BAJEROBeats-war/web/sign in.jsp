@@ -61,7 +61,7 @@ and open the template in the editor.
                                         <input type="password" placeholder="Password" required name="password" />
                                         <a href="" ><span style="font-size: 10px; color: black;">FORGOT PASSWORD</span></a>
                                         <div class="error-message">
-                                            <span style="color: red; font-size: 10px;">{error}</span>
+                                            <span style="color: red; font-size: 10px;">${error}</span>
                                         </div>
 
                                     </div>

@@ -1,6 +1,6 @@
 <!-- 
     Document   : sign in
-    Created on : Jul 30, 2022, 8:23:49 PM
+    Created on : Jul 31, 2022, 6:16:49 PM
     Author     : Sango
 -->
 
@@ -43,12 +43,12 @@ and open the template in the editor.
             </div>
             <div class="row log-in-body">
                 <div class="col-lg-12 col-md-12 col-sm-12 log-in-col">
-                    <div class="sign-in-container">
+                    <div class="sign-up-container">
                         <div class="sign-in-text">
                             <span style="font-size: 25px;"><b>SIGN IN</b></span>
                         </div>
                         <div class="sign-in-details">
-                            <form action="Sign_In" method="post">
+                            <form action="Sign_Up" method="post">
                                 <div class="con">
                                     <div class="sign-in-details-container">
                                         <img src="icons/icons8_user_50px_1.png" rel="pic" width="25px" height="25px" alt="pic" />
@@ -57,12 +57,21 @@ and open the template in the editor.
                                 </div>
                                 <div class="con">
                                     <div class="sign-in-details-container">
+                                        <img src="icons/icons8_user_50px_1.png" rel="pic" width="25px" height="25px" alt="pic" />
+                                        <input type="email" placeholder="Email" required name="email" />
+                                    </div>
+                                </div>
+                                <div class="con">
+                                    <div class="sign-in-details-container">
                                         <img src="icons/icons8_lock_50px.png" rel="pic" width="25px" height="25px" alt="pic" />
                                         <input type="password" placeholder="Password" required name="password" />
-                                        <a href="" ><span style="font-size: 10px; color: black;">FORGOT PASSWORD</span></a>
-                                        <div class="error-message">
-                                            <span style="color: red; font-size: 10px;">${error}</span>
-                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="con">
+                                    <div class="sign-in-details-container">
+                                        <img src="icons/icons8_lock_50px.png" rel="pic" width="25px" height="25px" alt="pic" />
+                                        <input type="password" placeholder="Confirm password" required name="confirm_password" />
 
                                     </div>
                                 </div>
@@ -73,15 +82,12 @@ and open the template in the editor.
                                 </div>
                             </form>
                         </div>
-                        <div class="sign-in-alternates">
-                            <a href="sign up.jsp">SIGN UP</a>
-                        </div>
                     </div>
                 </div>
             </div>
             <div class="row footer">
                 <div class="footer col-lg-12 col-md-12 col-sm-12">
-                    <span style="color: white; font-size: 15px;">�2022, BAJEROBeats</span>
+                    <span style="color: white; font-size: 15px;">ï¿½2022, BAJEROBeats</span>
                 </div>
             </div>
         </div>

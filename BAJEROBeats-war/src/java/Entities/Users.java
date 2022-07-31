@@ -66,7 +66,7 @@ public class Users implements Serializable {
     private String password;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "Date Created")
+    @Column(name = "Date_Created")
     @Temporal(TemporalType.DATE)
     private Date dateCreated;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")

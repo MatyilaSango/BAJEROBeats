@@ -42,9 +42,7 @@ public class UserDao {
         Users newUser = new Users(0, username, email, password, new Date());
         
         EntityManager em = EntityManagerFactoryHandler.getEntityManagerFactory().createEntityManager();
-        em.getTransaction().begin();
-        em.persist(newUser);
-        em.getTransaction().commit();
+        em.persist((Users) newUser);
         em.clear();
         em.close();  
     }

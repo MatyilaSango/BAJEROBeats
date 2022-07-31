@@ -6,7 +6,6 @@
 package Servelets;
 
 import DAOs.UserDao;
-import Entities.Users;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -19,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Sango
  */
-@WebServlet(name = "Sign_In", urlPatterns = {"/Sign_In"})
-public class Sign_In extends HttpServlet {
+@WebServlet(name = "Sign_Up", urlPatterns = {"/Sign_Up"})
+public class Sign_Up extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,26 +38,28 @@ public class Sign_In extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Sign_In</title>");            
+            out.println("<title>Servlet Sign_Up</title>");            
             out.println("</head>");
             out.println("<body>");
+            out.println("<h1>Please wait!... </h1>");
             
-            out.println("<h1>Please wait!</h1>");
+            
+            String username = (String) request.getParameter("username");
+            String email = (String) request.getParameter("email");
+            String password = (String) request.getParameter("password");
+            String confirm_password = (String) request.getParameter("confirm_password");
+            
+            if(!password.equals(confirm_password)){
+                out.println("<h1>Passwords don't mach!"+password+" "+confirm_password+" </h1>");
+            }else{
+                UserDao userdao = new UserDao();
+                userdao.createAccount(username, email, password);
+                this.getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
+            }
+                
             out.println("</body>");
             out.println("</html>");
             
-            String username = (String) request.getParameter("username");
-            String password = (String) request.getParameter("password");
-            try{
-                UserDao userdao = new UserDao();
-                Users user = userdao.findUser(username, password);
-                request.setAttribute("user", user.getUsername());
-                //this.getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
-                
-            }catch(Exception e){
-                request.setAttribute("error", "Incorrect username or password!");
-                this.getServletContext().getRequestDispatcher("/sign in.jsp").forward(request, response);
-            }
         }
     }
 
@@ -98,7 +99,7 @@ public class Sign_In extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Process sign in details.";
+        return "Short description";
     }// </editor-fold>
 
 }

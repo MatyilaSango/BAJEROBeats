@@ -51,7 +51,7 @@ public class Cart implements Serializable {
     private String status;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "Date bought")
+    @Column(name = "Date_bought")
     @Temporal(TemporalType.DATE)
     private Date datebought;
     @JoinColumn(name = "Product_Id", referencedColumnName = "ID")

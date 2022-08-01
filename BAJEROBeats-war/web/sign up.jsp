@@ -13,6 +13,7 @@ and open the template in the editor.
 <html>
     <head>
         <title>BAJEROBeats</title>
+        <link rel="icon" href="icons/BAJERO-logo.png" type="png" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
@@ -69,10 +70,8 @@ and open the template in the editor.
                     </div>
                 </div>
             </div>
-            <div class="row footer">
-                <div class="footer col-lg-12 col-md-12 col-sm-12" id="footer">
-                    <script src="JS/script.js"></script>
-                </div>
+            <div class="row footer" id="footer">
+                <script src="JS/script.js"></script>
             </div>
         </div>
     </body>

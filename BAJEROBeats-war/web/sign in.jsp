@@ -13,6 +13,7 @@ and open the template in the editor.
 <html>
     <head>
         <title>BAJEROBeats</title>
+        <link rel="icon" href="icons/BAJERO-logo.png" type="png" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
@@ -57,7 +58,7 @@ and open the template in the editor.
                             </form>
                         </div>
                         <div class="sign-in-alternates">
-                            <a href="sign%20up.html">SIGN UP</a>
+                            <a href="sign%20up.jsp">SIGN UP</a>
                         </div>
                     </div>
                 </div>

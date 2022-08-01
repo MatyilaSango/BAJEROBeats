@@ -5,9 +5,7 @@
  */
 package DAOs;
 
-import Entities.Cart;
 import Entities.Products;
-import Entities.Users;
 import EntityManagerFactoryHandler.EntityManagerFactoryHandler;
 import java.util.Date;
 import java.util.List;

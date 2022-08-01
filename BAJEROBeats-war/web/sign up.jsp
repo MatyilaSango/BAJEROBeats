@@ -45,7 +45,7 @@ and open the template in the editor.
                 <div class="col-lg-12 col-md-12 col-sm-12 log-in-col">
                     <div class="sign-up-container">
                         <div class="sign-in-text">
-                            <span style="font-size: 25px;"><b>SIGN IN</b></span>
+                            <span style="font-size: 25px;"><b>SIGN UP</b></span>
                         </div>
                         <div class="sign-in-details">
                             <form action="Sign_Up" method="post">
@@ -77,7 +77,7 @@ and open the template in the editor.
                                 </div>
                                 <div class="con">
                                     <div class="sign-in-btn-container">
-                                        <input type="submit" value="LOG IN" class="sign-in-btn" />
+                                        <input type="submit" value="SIGN UP" class="sign-in-btn" />
                                     </div>
                                 </div>
                             </form>

@@ -4,16 +4,16 @@ document.getElementById("nav-container").innerHTML =
                 </div>
                 <div class="mid-links col-lg-4 col-md-4 col-sm-12">
                     <nav>
-                        <a href="">Home</a> |
-                        <a href="">Explore</a> |
-                        <a href="">My list</a>
+                        <a href="" class="nav-text">Home</a> |
+                        <a href="" class="nav-text">Explore</a> |
+                        <a href="" class="nav-text">My list</a>
                     </nav>
                 </div>
                 <div class="right-links col-lg-4 col-md-4 col-sm-0">
                     <nav>
-                        <a href=""><img src="icons/icons8_search_50px_4.png" width="18px" height="18px" alt="pic" />Search</a> |
-                        <a href=""><img src="icons/icons8_user_50px.png" width="18px" height="18px" alt="pic" />Account</a> |
-                        <a href=""><img src="icons/icons8_shopping_cart_50px.png" width="18px" height="18px" alt="pic" />Cart</a>
+                        <a href="" class="nav-text"><img src="icons/icons8_search_50px_4.png" width="18px" height="18px" alt="pic" />Search</a> |
+                        <a href="" class="nav-text"><img src="icons/icons8_user_50px.png" width="18px" height="18px" alt="pic" />Account</a> |
+                        <a href="" class="nav-text"><img src="icons/icons8_shopping_cart_50px.png" width="18px" height="18px" alt="pic" />Cart</a>
                     </nav>
                 </div>`;
 

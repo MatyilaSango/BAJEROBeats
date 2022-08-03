@@ -122,35 +122,58 @@ body::-webkit-scrollbar{
     align-items: center;
     justify-content: center;
 }
-.start-container,.redirector{
+.start-container{
     height: calc(100vh - 25px);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .redirector{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 60px;
+    border-radius: 25px;
+    border: 1px solid red;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 60px;
-    color: black;
-    border: 1px solid black;
-    cursor: pointer;
+
 }
 .redirector a{
     text-decoration: none;
+    color: green;
 }
-.redirector:hover{
-    background: red;
-    color: white;
+.redirector::after{
+    content: '';
+    border-radius: 25px;
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.redirector:hover::after{
+    content: url("../icons/icons8_arrow_filled_50px.png");
+    width: 100%;
     transition: 0.5s;
-    transform-style: flat;
 }
 @media (max-width: 825px){
     .logo-icon,.right-links{
         display: none;
     }
+}
+.index{
+    background-color: #022641;
+}
+.index img{
+    margin-bottom: 200px;
 }
 
 

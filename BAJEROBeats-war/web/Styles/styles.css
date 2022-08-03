@@ -200,8 +200,12 @@ body::-webkit-scrollbar{
 .content-wrapper{
     height: 100%;
     width: 800px;
+    overflow-y: scroll;
     display: flex;
     justify-content: center;
+}
+.container-wrapper{
+    width: 80%;
 }
 .new-content-card{
     width: 80%;
@@ -268,5 +272,20 @@ body::-webkit-scrollbar{
     background-color: green;
     transition: 0.5s;
 }
-
+.btn-to-det{
+    width: 100%;
+}
+.to-btn{
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.5);
+}
+.to-btn:hover{
+    background-color: rgba(0, 0, 255, 0.62);
+    transition: 0.5s;
+}
+.ex-new-content-card{
+    height: 420px;
+    width: 100%;
+}
 

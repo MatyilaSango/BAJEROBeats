@@ -4,8 +4,8 @@ document.getElementById("nav-container").innerHTML =
                 </div>
                 <div class="mid-links col-lg-4 col-md-4 col-sm-12">
                     <nav>
-                        <a href="" class="nav-text">Home</a> |
-                        <a href="" class="nav-text">Explore</a> |
+                        <a href="Home.jsp" class="nav-text">Home</a> |
+                        <a href="Explore.jsp" class="nav-text">Explore</a> |
                         <a href="" class="nav-text">My list</a>
                     </nav>
                 </div>

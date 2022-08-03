@@ -193,6 +193,74 @@ body::-webkit-scrollbar{
     width: 100%;
     transition: 1s;
 }
-
-
+.main-banner{
+    display: flex;
+    justify-content: center;
+}
+.content-wrapper{
+    height: 100%;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+}
+.new-content-card{
+    width: 80%;
+    height: 480px;
+    position: relative;
+    margin-top: 50px;
+    overflow: hidden;
+    border-bottom: 1px solid black;
+}
+.pn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.date-div{
+    margin-left: 40px;
+    margin-top: 10px;
+}
+.content-image-div{
+    width: calc(100% - 80px);
+    height: 250px;
+    background-color: black;
+    margin-left: 40px;
+}
+.like-to-cart-save{
+    width: calc(100% - 80px);
+    height: 100px;
+    margin-left: 40px;
+}
+.to-cart-det-div{
+    width: 80%;
+    height: 100px;
+    padding-top: 10px;
+    text-align: center;
+}
+.like-div,.save-div{
+    width: 10%;
+}
+.like-div,.save-div{
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+.to-cart-det-div{
+    float: left;
+}
+.free-d,.BUNDLE-KIT{
+    width: 100%;
+}
+.to-cart-det-div .btn-download{
+    width: 120px;
+    height: 40px;
+    margin-top: 10px;
+    color: white;
+    background-color: red;
+    border: none;
+    font-size: 12px;
+    box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.5);
+}
 

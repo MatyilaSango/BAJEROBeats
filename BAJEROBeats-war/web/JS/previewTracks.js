@@ -10,7 +10,7 @@ let wavesurfer = WaveSurfer.create({
     responsive: true
 });
 
-wavesurfer.load('media/Driemanskap.mp3');
+wavesurfer.load('');
 
 plyBtn.onclick = function(){
     if(plyBtn.src.includes("Play")){

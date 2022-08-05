@@ -157,7 +157,6 @@ body::-webkit-scrollbar{
 }
 .redirector:hover::after{
     content: url("../icons/icons8_arrow_filled_50px.png");
-    link: "../sign in.jsp";
     width: 100%;
     transition: 0.5s;
 }
@@ -168,9 +167,6 @@ body::-webkit-scrollbar{
     .index img{
         width: 300px;
     }
-}
-.index{
-
 }
 .index img{
     margin-bottom: 200px;

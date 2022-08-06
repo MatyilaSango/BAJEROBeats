@@ -318,3 +318,11 @@ body::-webkit-scrollbar{
     box-sizing: border-box;
 }
 
+#cart-notification,#mylist-notification{
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    right: -10px;
+    top: -5px;
+    
+}

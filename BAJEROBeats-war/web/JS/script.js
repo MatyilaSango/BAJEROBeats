@@ -6,14 +6,14 @@ document.getElementById("nav-container").innerHTML =
                     <nav>
                         <a href="Home.jsp" class="nav-text">Home</a> |
                         <a href="Explore.jsp" class="nav-text">Explore</a> |
-                        <a href="" class="nav-text">My list</a>
+                        <a href="" class="nav-text">My list<div id="mylist-notification">0</div></a>
                     </nav>
                 </div>
                 <div class="right-links col-lg-4 col-md-4 col-sm-0">
                     <nav>
                         <a href="" class="nav-text"><img src="icons/icons8_search_50px_4.png" width="18px" height="18px" alt="pic" />Search</a> |
                         <a href="" class="nav-text"><img src="icons/icons8_user_50px.png" width="18px" height="18px" alt="pic" />Account</a> |
-                        <a href="" class="nav-text"><img src="icons/icons8_shopping_cart_50px.png" width="18px" height="18px" alt="pic" />Cart</a>
+                        <a href="" class="nav-text"><img src="icons/icons8_shopping_cart_50px.png" width="18px" height="18px" alt="pic" />Cart<div id="cart-notification">0</div></a>
                     </nav>
                 </div>`;
 

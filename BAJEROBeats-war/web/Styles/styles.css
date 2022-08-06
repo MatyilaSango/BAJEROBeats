@@ -4,6 +4,9 @@
     padding: 0px;
     margin: 0px;
 }
+body{
+    min-width: 400px;
+}
 .nav-container{
     height: 50px;
     background: black;
@@ -160,14 +163,6 @@ body::-webkit-scrollbar{
     width: 100%;
     transition: 0.5s;
 }
-@media (max-width: 825px){
-    .logo-icon,.right-links{
-        display: none;
-    }
-    .index img{
-        width: 300px;
-    }
-}
 .index img{
     margin-bottom: 200px;
 }
@@ -285,6 +280,8 @@ body::-webkit-scrollbar{
 .ex-new-content-card{
     height: 420px;
     width: 100%;
+    overflow-y: hidden;
+    margin-top: -1px;
 }
 .audio-review-containter{
     width: 100%;
@@ -325,4 +322,58 @@ body::-webkit-scrollbar{
     right: -10px;
     top: -5px;
     
+}
+.cart-notification-black{
+    color: black;
+}
+.prdct-txt{
+    width: 100%;
+    text-align: left;
+    margin-left: 40px;
+}
+.cart-card{
+    height: 500px;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+.dropdown-container{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.drpContents{
+    display: none;
+    width: 40px;
+    height: 120px;
+    
+}
+.drp-nav{
+    margin-top: 10px;
+}
+
+
+
+
+
+@media (max-width: 825px){
+    .logo-icon,.right-links{
+        display: none;
+    }
+    .index img{
+        width: 300px;
+    }
+    .dropdown-container{
+        display: block;
+    }
 }

@@ -25,15 +25,10 @@ and open the template in the editor.
     <div class="wrapper">
         <div class="row nav-container justify-content-center" id="nav-container">
             <script src="JS/script.js"></script>
-            
-            
         </div>
         <div class="main-banner">
             <div class="content-wrapper">
                 <div class="new-content-card">
-                    <div class="prdct-txt">
-                        <span style="font-size: 15px;"><b>NEW PRODUCT:</b></span><br>
-                    </div>
                     <div class="pn">
                         <span style="font-size: 20px;"><b>PACKAGE NAME</b></span><br>
                     </div>

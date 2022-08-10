@@ -20,8 +20,8 @@ and open the template in the editor.
             <div class="row start-container index">
                 <div class="col-lg-12 col-md-12 col-sm-12 log-in-col">
                     <img src="icons/BAJERO-logo.png" alt="pic" width="750px"/>
-                    <div class="redirector">
-                        <a href="sign%20in.jsp"><b>Start</b></a>
+                    <div class="redirector" id="redirector">
+                        <b>Start</b>
                     </div>
                 </div>
             </div>
@@ -30,4 +30,9 @@ and open the template in the editor.
             </div>
         </div>
     </body>
+    <script type="text/javascript">
+        document.getElementById("redirector").onclick = function(){
+            location.href = "sign in.html";
+        };
+    </script>
 </html>

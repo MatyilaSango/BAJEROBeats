@@ -25,10 +25,15 @@ public class UserDao {
      */
     public Users findUser(String username, String password){
         EntityManager em = EntityManagerFactoryHandler.getEntityManagerFactory().createEntityManager();
-        return em.createQuery("SELECT * FROM Users u WHERE u.username = :username AND u.password = :password", Users.class)
+        /*Users user = em.createQuery("SELECT u FROM Users u WHERE u.username = :username AND u.password = :password", Users.class)
                 .setParameter("username", username)
                 .setParameter("password", password)
-                .getSingleResult();
+                .getSingleResult();*/
+ 
+        Users user =  em.createQuery("SELECT u FROM Users u WHERE u.username = :username", Users.class).setParameter("username", username).getSingleResult();
+        em.clear();
+        em.close();
+        return user;
     }
     
     /**
@@ -42,7 +47,7 @@ public class UserDao {
         Users newUser = new Users(0, username, email, password, new Date());
         
         EntityManager em = EntityManagerFactoryHandler.getEntityManagerFactory().createEntityManager();
-        em.persist((Users) newUser);
+        em.persist(newUser);
         em.clear();
         em.close();  
     }

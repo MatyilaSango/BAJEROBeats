@@ -43,22 +43,27 @@ public class Sign_In extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             
-            out.println("<h1>Please wait!</h1>");
-            out.println("</body>");
-            out.println("</html>");
             
             String username = (String) request.getParameter("username");
             String password = (String) request.getParameter("password");
             try{
+                out.println("<h1>Please wait!</h1>");
                 UserDao userdao = new UserDao();
                 Users user = userdao.findUser(username, password);
-                request.setAttribute("user", user.getUsername());
-                //this.getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
                 
-            }catch(Exception e){
-                request.setAttribute("error", "Incorrect username or password!");
-                this.getServletContext().getRequestDispatcher("/sign in.jsp").forward(request, response);
+                out.println("<h1>"+user.getUsername()+" :"+ user.getEmail()+"</h1>");
+                request.setAttribute("user", user.getUsername());
+                this.getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
+                
+            }catch(IllegalStateException e){
+                request.setAttribute("error", "Incorrect username or password!"+e.getMessage());
+                //this.getServletContext().getRequestDispatcher("/sign in.jsp").forward(request, response);
+                out.println("<h1>"+e.getMessage()+"<br /><br />"+e.getLocalizedMessage()+"</h1>");
             }
+            
+            out.println("<h1>Please wait!</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 

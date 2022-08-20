@@ -393,7 +393,67 @@ body::-webkit-scrollbar{
 #toTopBtn:active{
     box-shadow: 0px 0px 5px 5px green;
 }
+.confir-wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    visibility: visible;
+}
+.con-wrapper{
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 5px black;
+}
+.con-wrapper:hover{
+    box-shadow: 0px 0px 10px 5px green;
+}
+.con-pic{
+    width: 100%;
+    height: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.con-bg-txt{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.con-text,.con-but{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+}
+.con-bg-txt{
+    font-size: 25px;
+}
+.con-text{
+    font-size: 13px;
+}
+.con-but button{
+    width: 100px;
+    height: 30px;
+    background-color: #05c905;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.con-but button:hover{
+    box-shadow: 0px 0px 10px 5px black;
+}
 
 
 

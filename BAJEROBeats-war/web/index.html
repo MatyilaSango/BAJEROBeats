@@ -15,7 +15,7 @@ and open the template in the editor.
         <link href="Styles/styles.css" rel="stylesheet" />
 
     </head>
-    <body>
+    <body id="body">
         <div class="wrapper">
             <div class="row start-container index">
                 <div class="col-lg-12 col-md-12 col-sm-12 log-in-col">
@@ -23,6 +23,7 @@ and open the template in the editor.
                     <div class="redirector" id="redirector">
                         <b>Start</b>
                     </div>
+                    <button onclick="showConfirmation('success')" >Click</button>
                 </div>
             </div>
             <div class="row footer" id="footer">
@@ -35,4 +36,5 @@ and open the template in the editor.
             location.href = "sign in.jsp";
         };
     </script>
+    <script src="JS/confirmation_pop_handler.js"></script>
 </html>

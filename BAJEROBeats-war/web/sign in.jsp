@@ -68,11 +68,11 @@ and open the template in the editor.
             </div>
         </div>
         <script src="JS/confirmation_pop_handler.js"></script>
-        <script>
-            if({confStatus}=="success"){
+        <script type="text/javascript">
+            if(confStatus=="success"){
                 showConfirmation("success");
             }
-            else if({confStatus} == "error"){
+            else if(confStatus == "error"){
                 showConfirmation("error");
             }
         </script>

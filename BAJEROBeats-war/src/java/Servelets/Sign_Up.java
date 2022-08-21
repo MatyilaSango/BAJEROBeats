@@ -51,10 +51,13 @@ public class Sign_Up extends HttpServlet {
             
             if(!password.equals(confirm_password)){
                 out.println("<h1>Passwords don't mach!"+password+" "+confirm_password+" </h1>");
+                request.setAttribute("confStatus", "error");
+                this.getServletContext().getRequestDispatcher("/Sign up.jsp").forward(request, response);
             }else{
                 UserDao userdao = new UserDao();
                 userdao.createAccount(username, email, password);
-                this.getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
+                request.setAttribute("confStatus", "success");
+                this.getServletContext().getRequestDispatcher("/Sign up.jsp").forward(request, response);
             }
                 
             out.println("</body>");

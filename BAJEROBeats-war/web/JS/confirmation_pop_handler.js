@@ -36,7 +36,4 @@ function showConfirmation(status) {
         conTxt.innerHTML = "Caught an error!";
     }
 
-
-
-
 }

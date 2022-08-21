@@ -9,11 +9,13 @@ import DAOs.UserDao;
 import Entities.Users;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.persistence.NoResultException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -42,8 +44,7 @@ public class Sign_In extends HttpServlet {
             out.println("<title>Servlet Sign_In</title>");            
             out.println("</head>");
             out.println("<body>");
-            
-            
+     
             String username = (String) request.getParameter("username");
             String password = (String) request.getParameter("password");
             try{
@@ -53,12 +54,20 @@ public class Sign_In extends HttpServlet {
                 
                 out.println("<h1>"+user.getUsername()+" :"+ user.getEmail()+"</h1>");
                 request.setAttribute("user", user.getUsername());
-                this.getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
+                HttpSession session = request.getSession();
+                session.setAttribute("username", user.getUsername());
+                
+                request.getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
                 
             }catch(IllegalStateException e){
-                request.setAttribute("error", "Incorrect username or password!"+e.getMessage());
-                //this.getServletContext().getRequestDispatcher("/sign in.jsp").forward(request, response);
-                out.println("<h1>"+e.getMessage()+"<br /><br />"+e.getLocalizedMessage()+"</h1>");
+                request.setAttribute("confStatus", "error"+e.getMessage());
+                out.println("<h1>"+e.getMessage()+"</h1>");
+                request.getServletContext().getRequestDispatcher("/sign in.jsp").forward(request, response);
+                
+            }
+            catch(NoResultException e){
+                request.setAttribute("error", "Incorrect username or password!");
+                request.getServletContext().getRequestDispatcher("/sign in.jsp").forward(request, response);
             }
             
             out.println("<h1>Please wait!</h1>");

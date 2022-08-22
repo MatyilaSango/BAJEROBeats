@@ -6,7 +6,7 @@
 package Servelets;
 
 import DAOs.UserDao;
-import Entities.Users;
+import Entities.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.persistence.NoResultException;
@@ -50,7 +50,7 @@ public class Sign_In extends HttpServlet {
             try{
                 out.println("<h1>Please wait!</h1>");
                 UserDao userdao = new UserDao();
-                Users user = userdao.findUser(username, password);
+                User user = userdao.findUser(username, password);
                 
                 out.println("<h1>"+user.getUsername()+" :"+ user.getEmail()+"</h1>");
                 request.setAttribute("user", user.getUsername());

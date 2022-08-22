@@ -7,7 +7,7 @@ package DAOs;
 
 import Entities.Cart;
 import Entities.Products;
-import Entities.Users;
+import Entities.User;
 import EntityManagerFactoryHandler.EntityManagerFactoryHandler;
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,7 +26,7 @@ public class CartDao {
      * @param user
      * @return product list
      */
-    public List<Cart> readMyCart(Users user){
+    public List<Cart> readMyCart(User user){
         EntityManager em = EntityManagerFactoryHandler.getEntityManagerFactory().createEntityManager();
         List<Cart> myCart = em.createNamedQuery("Cart.findAll", Cart.class).getResultList();
         List<Cart> cart = new ArrayList<>();
@@ -44,7 +44,7 @@ public class CartDao {
      * @param user
      * @param product
      */
-    public void addToMycart(Users user, Products product){
+    public void addToMycart(User user, Products product){
         Cart cart = new Cart();
         cart.setProductId(product);
         cart.setUserId(user);
@@ -64,7 +64,7 @@ public class CartDao {
      * @param user
      * @param product
      */
-    public void deleteCart(Users user, Products product){
+    public void deleteCart(User user, Products product){
         List<Cart> myCart = this.readMyCart(user);
         Cart cart = null;
         for (Cart c : myCart){
@@ -88,7 +88,7 @@ public class CartDao {
      * @param product
      * @return download link.
      */
-    public String chectOutProduct(Users user, Products product){
+    public String chectOutProduct(User user, Products product){
         EntityManager em = EntityManagerFactoryHandler.getEntityManagerFactory().createEntityManager();
         Cart myProduct = em.createQuery("SELECT c FROM Cart c WHERE c.userId = :userId AND c.productId = :productId AND c.status = :status", Cart.class)
                 .setParameter("userId", user.getId())

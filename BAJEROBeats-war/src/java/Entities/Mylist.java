@@ -42,7 +42,7 @@ public class Mylist implements Serializable {
     private Products productId;
     @JoinColumn(name = "User_Id", referencedColumnName = "ID")
     @ManyToOne(optional = false)
-    private Users userId;
+    private User userId;
 
     public Mylist() {
     }
@@ -67,11 +67,11 @@ public class Mylist implements Serializable {
         this.productId = productId;
     }
 
-    public Users getUserId() {
+    public User getUserId() {
         return userId;
     }
 
-    public void setUserId(Users userId) {
+    public void setUserId(User userId) {
         this.userId = userId;
     }
 

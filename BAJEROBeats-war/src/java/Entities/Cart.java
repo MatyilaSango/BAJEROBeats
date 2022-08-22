@@ -59,7 +59,7 @@ public class Cart implements Serializable {
     private Products productId;
     @JoinColumn(name = "User_Id", referencedColumnName = "ID")
     @ManyToOne(optional = false)
-    private Users userId;
+    private User userId;
 
     public Cart() {
     }
@@ -106,11 +106,11 @@ public class Cart implements Serializable {
         this.productId = productId;
     }
 
-    public Users getUserId() {
+    public User getUserId() {
         return userId;
     }
 
-    public void setUserId(Users userId) {
+    public void setUserId(User userId) {
         this.userId = userId;
     }
 

@@ -7,7 +7,7 @@ package DAOs;
 
 import Entities.Mylist;
 import Entities.Products;
-import Entities.Users;
+import Entities.User;
 import EntityManagerFactoryHandler.EntityManagerFactoryHandler;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class MylistDao {
      * @param user
      * @return product list
      */
-    public List<Products> readMyFavorite(Users user){
+    public List<Products> readMyFavorite(User user){
         EntityManager em = EntityManagerFactoryHandler.getEntityManagerFactory().createEntityManager();
         List<Mylist> mylist = em.createNamedQuery("Mylist.findAll", Mylist.class).getResultList();
         List<Products> products = new ArrayList<>();
@@ -43,7 +43,7 @@ public class MylistDao {
      * @param user
      * @param product
      */
-    public void addProduct(Users user, Products product){
+    public void addProduct(User user, Products product){
         Mylist myProduct = new Mylist();
         myProduct.setProductId(product);
         myProduct.setUserId(user);
@@ -62,7 +62,7 @@ public class MylistDao {
      * @param user
      * @param product
      */
-    public void deleteProduct(Users user, Products product){
+    public void deleteProduct(User user, Products product){
         EntityManager em = EntityManagerFactoryHandler.getEntityManagerFactory().createEntityManager();
         Mylist myProduct = em.createQuery("SELECT m FROM Mylist m WHERE m.productId = :productId AND m.userId = :userId", Mylist.class)
                 .setParameter("productId", product.getId())

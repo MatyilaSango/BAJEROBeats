@@ -5,7 +5,9 @@
  */
 package Servelets;
 
+import DAOs.ProductsDao;
 import DAOs.UserDao;
+import Entities.Products;
 import Entities.User;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -52,10 +54,15 @@ public class Sign_In extends HttpServlet {
                 UserDao userdao = new UserDao();
                 User user = userdao.findUser(username, password);
                 
-                out.println("<h1>"+user.getUsername()+" :"+ user.getEmail()+"</h1>");
-                request.setAttribute("user", user.getUsername());
                 HttpSession session = request.getSession();
-                session.setAttribute("username", user.getUsername());
+                session.setAttribute("username", "not null"/*user.getUsername()*/);
+                
+                //Retrieving latest produt.
+                ProductsDao pdao = new ProductsDao();
+                Products product = pdao.readAllProducts().get(0);
+                request.setAttribute("productName", product.getName());
+                request.setAttribute("dateCreated", product.getDateCreated().toString());
+                request.setAttribute("cost", product.getCost());
                 
                 request.getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
                 

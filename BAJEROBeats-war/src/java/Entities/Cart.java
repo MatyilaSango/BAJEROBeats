@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Cart.findAll", query = "SELECT c FROM Cart c")
     , @NamedQuery(name = "Cart.findById", query = "SELECT c FROM Cart c WHERE c.id = :id")
     , @NamedQuery(name = "Cart.findByStatus", query = "SELECT c FROM Cart c WHERE c.status = :status")
-    , @NamedQuery(name = "Cart.findByDatebought", query = "SELECT c FROM Cart c WHERE c.datebought = :datebought")})
+    , @NamedQuery(name = "Cart.findByDateBought", query = "SELECT c FROM Cart c WHERE c.dateBought = :dateBought")})
 public class Cart implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -51,13 +51,13 @@ public class Cart implements Serializable {
     private String status;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "Date_bought")
+    @Column(name = "DateBought")
     @Temporal(TemporalType.DATE)
-    private Date datebought;
-    @JoinColumn(name = "Product_Id", referencedColumnName = "ID")
+    private Date dateBought;
+    @JoinColumn(name = "ProductId", referencedColumnName = "ID")
     @ManyToOne(optional = false)
     private Products productId;
-    @JoinColumn(name = "User_Id", referencedColumnName = "ID")
+    @JoinColumn(name = "UserId", referencedColumnName = "ID")
     @ManyToOne(optional = false)
     private User userId;
 
@@ -68,10 +68,10 @@ public class Cart implements Serializable {
         this.id = id;
     }
 
-    public Cart(Integer id, String status, Date datebought) {
+    public Cart(Integer id, String status, Date dateBought) {
         this.id = id;
         this.status = status;
-        this.datebought = datebought;
+        this.dateBought = dateBought;
     }
 
     public Integer getId() {
@@ -90,12 +90,12 @@ public class Cart implements Serializable {
         this.status = status;
     }
 
-    public Date getDatebought() {
-        return datebought;
+    public Date getDateBought() {
+        return dateBought;
     }
 
-    public void setDatebought(Date datebought) {
-        this.datebought = datebought;
+    public void setDateBought(Date dateBought) {
+        this.dateBought = dateBought;
     }
 
     public Products getProductId() {

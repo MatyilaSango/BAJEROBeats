@@ -30,7 +30,7 @@ public class UserDao {
                 .setParameter("password", password)
                 .getSingleResult();*/
  
-        User user =  em.createQuery("SELECT u FROM Users u WHERE u.username = :username", User.class).setParameter("username", username).getSingleResult();
+        User user =  em.createQuery("SELECT u FROM User u", User.class)/*.setParameter("username", username)*/.getSingleResult();
         em.clear();
         em.close();
         return user;

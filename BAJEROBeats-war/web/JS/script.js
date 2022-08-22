@@ -18,7 +18,7 @@ document.getElementById("nav-container").innerHTML =
                                         <a href="" class="nav-text"><img src="icons/icons8_user_50px_black.png" width="25px" alt="pic" /></a>
                                     </div>
                                     <div class="drp-nav">
-                                        <a href="sign%20in.jsp" class="nav-text"><img src="icons/icons8_shopping_cart_50px_black.png" width="25px" alt="pic" /><div id="cart-notification"><span style="color: black;">0</span></div></a>
+                                        <a href="Cart.jsp" class="nav-text"><img src="icons/icons8_shopping_cart_50px_black.png" width="25px" alt="pic" /><div id="cart-notification"><span style="color: black;">0</span></div></a>
                                     </div>  
                                 </div>
                             </div>
@@ -29,7 +29,7 @@ document.getElementById("nav-container").innerHTML =
                     <nav>
                         <a href="" class="nav-text"><img src="icons/icons8_search_50px_4.png" width="18px" height="18px" alt="pic" />Search</a> |
                         <a href="" class="nav-text"><img src="icons/icons8_user_50px.png" width="18px" height="18px" alt="pic" />Account</a> |
-                        <a href="Chart.jsp" class="nav-text"><img src="icons/icons8_shopping_cart_50px.png" width="18px" height="18px" alt="pic" />Cart<div id="cart-notification">0</div></a>
+                        <a href="Cart.jsp" class="nav-text"><img src="icons/icons8_shopping_cart_50px.png" width="18px" height="18px" alt="pic" />Cart<div id="cart-notification">0</div></a>
                     </nav>
                 </div>`;
 

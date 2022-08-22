@@ -37,10 +37,10 @@ public class Mylist implements Serializable {
     @Basic(optional = false)
     @Column(name = "ID")
     private Integer id;
-    @JoinColumn(name = "Product_Id", referencedColumnName = "ID")
+    @JoinColumn(name = "ProductId", referencedColumnName = "ID")
     @ManyToOne(optional = false)
     private Products productId;
-    @JoinColumn(name = "User_Id", referencedColumnName = "ID")
+    @JoinColumn(name = "UserId", referencedColumnName = "ID")
     @ManyToOne(optional = false)
     private User userId;
 

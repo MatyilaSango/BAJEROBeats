@@ -97,9 +97,9 @@ public class CartDao {
                 .getSingleResult();
         
         myProduct.setStatus("Bought");
-        myProduct.setDatebought(new Date());
+        myProduct.setDateBought(new Date());
         
-        product.setDownloadno(product.getDownloadno() + 1);
+        product.setDownloadNumber(product.getDownloadNumber() + 1);
         myProduct.setProductId(product);
         
         em.getTransaction().begin();
@@ -109,7 +109,7 @@ public class CartDao {
         em.clear();
         em.close();
         
-        return myProduct.getProductId().getDownloadlink();
+        return myProduct.getProductId().getDownloadLink();
     }
     
 }

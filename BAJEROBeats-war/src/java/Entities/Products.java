@@ -37,11 +37,11 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Products.findAll", query = "SELECT p FROM Products p")
     , @NamedQuery(name = "Products.findById", query = "SELECT p FROM Products p WHERE p.id = :id")
     , @NamedQuery(name = "Products.findByName", query = "SELECT p FROM Products p WHERE p.name = :name")
-    , @NamedQuery(name = "Products.findByDateposted", query = "SELECT p FROM Products p WHERE p.dateposted = :dateposted")
     , @NamedQuery(name = "Products.findByCost", query = "SELECT p FROM Products p WHERE p.cost = :cost")
-    , @NamedQuery(name = "Products.findByDownloadno", query = "SELECT p FROM Products p WHERE p.downloadno = :downloadno")
-    , @NamedQuery(name = "Products.findByPiclink", query = "SELECT p FROM Products p WHERE p.piclink = :piclink")
-    , @NamedQuery(name = "Products.findByDownloadlink", query = "SELECT p FROM Products p WHERE p.downloadlink = :downloadlink")})
+    , @NamedQuery(name = "Products.findByDownloadNumber", query = "SELECT p FROM Products p WHERE p.downloadNumber = :downloadNumber")
+    , @NamedQuery(name = "Products.findByPicLink", query = "SELECT p FROM Products p WHERE p.picLink = :picLink")
+    , @NamedQuery(name = "Products.findByDownloadLink", query = "SELECT p FROM Products p WHERE p.downloadLink = :downloadLink")
+    , @NamedQuery(name = "Products.findByDateCreated", query = "SELECT p FROM Products p WHERE p.dateCreated = :dateCreated")})
 public class Products implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -57,27 +57,27 @@ public class Products implements Serializable {
     private String name;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "Date posted")
-    @Temporal(TemporalType.DATE)
-    private Date dateposted;
-    @Basic(optional = false)
-    @NotNull
     @Column(name = "Cost")
     private int cost;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "Download no")
-    private int downloadno;
+    @Column(name = "DownloadNumber")
+    private int downloadNumber;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 500)
-    @Column(name = "Pic link")
-    private String piclink;
+    @Column(name = "PicLink")
+    private String picLink;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 500)
-    @Column(name = "Download link")
-    private String downloadlink;
+    @Column(name = "DownloadLink")
+    private String downloadLink;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "DateCreated")
+    @Temporal(TemporalType.DATE)
+    private Date dateCreated;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
     private List<Mylist> mylistList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
@@ -90,14 +90,14 @@ public class Products implements Serializable {
         this.id = id;
     }
 
-    public Products(Integer id, String name, Date dateposted, int cost, int downloadno, String piclink, String downloadlink) {
+    public Products(Integer id, String name, int cost, int downloadNumber, String picLink, String downloadLink, Date dateCreated) {
         this.id = id;
         this.name = name;
-        this.dateposted = dateposted;
         this.cost = cost;
-        this.downloadno = downloadno;
-        this.piclink = piclink;
-        this.downloadlink = downloadlink;
+        this.downloadNumber = downloadNumber;
+        this.picLink = picLink;
+        this.downloadLink = downloadLink;
+        this.dateCreated = dateCreated;
     }
 
     public Integer getId() {
@@ -116,14 +116,6 @@ public class Products implements Serializable {
         this.name = name;
     }
 
-    public Date getDateposted() {
-        return dateposted;
-    }
-
-    public void setDateposted(Date dateposted) {
-        this.dateposted = dateposted;
-    }
-
     public int getCost() {
         return cost;
     }
@@ -132,28 +124,36 @@ public class Products implements Serializable {
         this.cost = cost;
     }
 
-    public int getDownloadno() {
-        return downloadno;
+    public int getDownloadNumber() {
+        return downloadNumber;
     }
 
-    public void setDownloadno(int downloadno) {
-        this.downloadno = downloadno;
+    public void setDownloadNumber(int downloadNumber) {
+        this.downloadNumber = downloadNumber;
     }
 
-    public String getPiclink() {
-        return piclink;
+    public String getPicLink() {
+        return picLink;
     }
 
-    public void setPiclink(String piclink) {
-        this.piclink = piclink;
+    public void setPicLink(String picLink) {
+        this.picLink = picLink;
     }
 
-    public String getDownloadlink() {
-        return downloadlink;
+    public String getDownloadLink() {
+        return downloadLink;
     }
 
-    public void setDownloadlink(String downloadlink) {
-        this.downloadlink = downloadlink;
+    public void setDownloadLink(String downloadLink) {
+        this.downloadLink = downloadLink;
+    }
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
     }
 
     @XmlTransient

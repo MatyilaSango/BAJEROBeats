@@ -41,10 +41,10 @@ and open the template in the editor.
                         <span style="font-size: 15px;"><b>NEW PRODUCT:</b></span><br>
                     </div>
                     <div class="pn">
-                        <span style="font-size: 20px;"><b>PACKAGE NAME</b></span><br>
+                        <span style="font-size: 20px;"><b>${productName}</b></span><br>
                     </div>
                     <div class="date-div">
-                        <span style="font-size: 15px;">DATE</span>
+                        <span style="font-size: 15px;">%=${dateCreated}</span>
                     </div>
                     <div class="content-image-div prod">
                         <div class="sale-tag">
@@ -61,7 +61,7 @@ and open the template in the editor.
                                     <span><b>BUNDLE KIT</b></span>
                                 </div>
                                 <div class="free-d">
-                                    <span style="color: red; font-size: 13px">FREE DOWNLOAD</span>
+                                    <span style="color: red; font-size: 13px">${cost}</span>
                                 </div>
                                 <input type="button" class="btn-download" value="ADD TO CART" />
 

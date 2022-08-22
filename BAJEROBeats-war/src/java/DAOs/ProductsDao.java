@@ -36,7 +36,7 @@ public class ProductsDao {
      * @param downloadLink
      */
     public void addProduct(String name, int cost, String picLink, String downloadLink){
-        Products product = new Products(0, name, new Date(), cost, 0, picLink, downloadLink);
+        Products product = new Products(0, name, cost, 0, picLink, downloadLink, new Date());
         
         EntityManager em = EntityManagerFactoryHandler.getEntityManagerFactory().createEntityManager();
         em.getTransaction().begin();

@@ -40,8 +40,10 @@ and open the template in the editor.
                     <div class="date-div">
                         <span style="font-size: 15px;">DATE</span>
                     </div>
-                    <div class="content-image-div">
-
+                    <div class="content-image-div prod">
+                        <div class="sale-tag">
+                            <span>For sale!</span>
+                        </div>
                     </div>
                     <div class="like-to-cart-save">
                         <nav>

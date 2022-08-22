@@ -11,8 +11,10 @@ for ( i; i<20; i++){
         "                <div class=\"date-div\">\n" +
         "                    <span style=\"font-size: 15px;\">DATE</span>\n" +
         "                </div>\n" +
-        "                <div class=\"content-image-div\">\n" +
-        "\n" +
+        "                <div class=\"content-image-div prod\">\n" +
+        "                    <div class=\"sale-tag\">\n" +
+        "                        <span>For sale!</span>\n" +
+        "                     </div>\n" +
         "                </div>\n" +
         "                <div class=\"like-to-cart-save\">\n" +
         "                    <nav>\n" +

@@ -455,7 +455,49 @@ body::-webkit-scrollbar{
     box-shadow: 0px 0px 10px 5px black;
 }
 
+.prod-body{
+    width: 100vw;
+    height: 100vh;
+}
 
+.sale-tag{
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 100px;
+    transform: rotate(-45deg);
+    left: 10px;
+    top: 10px;
+    z-index: 1;
+}
+.prod::before, .prod::after{
+    content: "";
+    width: 15px;
+    height: 15px;
+    display: block;
+    background-color: rgb(255, 51, 0);
+    z-index: -1;
+}
+.prod::before{
+    position: absolute;
+    left: 60px;
+    top: -11px;
+    height: 11px;
+}
+.prod::after{
+    position: absolute;
+    left: -11px;
+    top: 60px;
+    width: 11px;
+}
+.sale-tag span{
+    line-height: 15px;
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    background-color: rgb(255, 51, 0);
+    color: white;
+}
 
 
 @media (max-width: 825px){

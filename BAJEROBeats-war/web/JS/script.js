@@ -28,8 +28,25 @@ document.getElementById("nav-container").innerHTML =
                 <div class="right-links col-lg-4 col-md-4 col-sm-0">
                     <nav>
                         <a href="" class="nav-text"><img src="icons/icons8_search_50px_4.png" width="18px" height="18px" alt="pic" />Search</a> |
-                        <a href="" class="nav-text"><img src="icons/icons8_user_50px.png" width="18px" height="18px" alt="pic" />Account</a> |
-                        <a href="Cart.jsp" class="nav-text"><img src="icons/icons8_shopping_cart_50px.png" width="18px" height="18px" alt="pic" />Cart<div id="cart-notification">0</div></a>
+                        <div class="prof-acc-con" >
+                            <a href="" class="nav-text" id="acc-btn"><img src="icons/icons8_user_50px.png" width="18px" height="18px" alt="pic" />Account</a> 
+                            <div class="prof-float-cont" id="prof-float-cont">
+                                <div class="head-prof">
+                                    <img src="icons/icons8_gender_neutral_user_50px.png" alt="pic" width="35px" height="35px" />
+                                    <span class="usern"><b>Username</b></span><br />
+                                    <span style="font-size: 10px;">email@mail.com</span>
+                                </div>
+                                <button><b>Profile</b></button>
+                                <div class="prof-item-dis">
+                                    <p>Cart: 0</p>
+                                </div>
+                                <div class="prof-item-dis">
+                                    <p>Favourites: 0</p>
+                                </div>
+                                <button class="out-b"><b>Log out</b></button>
+                            </div>
+                        </div>
+                        | <a href="Cart.jsp" class="nav-text"><img src="icons/icons8_shopping_cart_50px.png" width="18px" height="18px" alt="pic" />Cart<div id="cart-notification">0</div></a>
                     </nav>
                 </div>`;
 
@@ -40,6 +57,8 @@ document.getElementById("footer").innerHTML =
 
 var drpNavContents = document.getElementById("drpContents");
 var drpdwnBtn = document.getElementById("dropdown-btn");
+var accBtn = document.getElementById("acc-btn");
+var accDisPro = document.getElementById("prof-float-cont");
 
 drpdwnBtn.onclick = function(){
     if(drpNavContents.style.display == "none"){
@@ -47,5 +66,13 @@ drpdwnBtn.onclick = function(){
     }
     else{
         drpNavContents.style.display = "none"
+    }
+}
+
+accBtn.onclick = function(){
+    if(accDisPro.style.display=="none"){
+        accDisPro.style.display="block";
+    }else{
+        accDisPro.style.display="none";
     }
 }

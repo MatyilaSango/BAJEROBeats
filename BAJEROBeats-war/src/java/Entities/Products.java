@@ -44,19 +44,13 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Products.findByDateCreated", query = "SELECT p FROM Products p WHERE p.dateCreated = :dateCreated")})
 public class Products implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "ID")
-    private Integer id;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 500)
     @Column(name = "Name")
     private String name;
     @Basic(optional = false)
-    @NotNull
+    @NotNull()
     @Column(name = "Cost")
     private int cost;
     @Basic(optional = false)
@@ -78,6 +72,14 @@ public class Products implements Serializable {
     @Column(name = "DateCreated")
     @Temporal(TemporalType.DATE)
     private Date dateCreated;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
+    private List<Notifications> notificationsList;
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "ID")
+    private Integer id;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
     private List<Mylist> mylistList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
@@ -106,6 +108,50 @@ public class Products implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+
+    @XmlTransient
+    public List<Mylist> getMylistList() {
+        return mylistList;
+    }
+
+    public void setMylistList(List<Mylist> mylistList) {
+        this.mylistList = mylistList;
+    }
+
+    @XmlTransient
+    public List<Cart> getCartList() {
+        return cartList;
+    }
+
+    public void setCartList(List<Cart> cartList) {
+        this.cartList = cartList;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Products)) {
+            return false;
+        }
+        Products other = (Products) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Entities.Products[ id=" + id + " ]";
     }
 
     public String getName() {
@@ -157,46 +203,12 @@ public class Products implements Serializable {
     }
 
     @XmlTransient
-    public List<Mylist> getMylistList() {
-        return mylistList;
+    public List<Notifications> getNotificationsList() {
+        return notificationsList;
     }
 
-    public void setMylistList(List<Mylist> mylistList) {
-        this.mylistList = mylistList;
-    }
-
-    @XmlTransient
-    public List<Cart> getCartList() {
-        return cartList;
-    }
-
-    public void setCartList(List<Cart> cartList) {
-        this.cartList = cartList;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Products)) {
-            return false;
-        }
-        Products other = (Products) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Entities.Products[ id=" + id + " ]";
+    public void setNotificationsList(List<Notifications> notificationsList) {
+        this.notificationsList = notificationsList;
     }
     
 }

@@ -47,7 +47,7 @@ public class ProductsDao {
     }
     
     /**
-     * Find a notification.
+     * Find a product by name.
      * 
      * @param productName
      * @return product

@@ -508,6 +508,8 @@ body::-webkit-scrollbar{
     display: none;
     position: absolute;
     padding-top: 10px;
+    z-index: 1;
+    background-image: linear-gradient(to bottom, black 0px, black 10px, #b8b8b8 10%, #b8b8b8 100%);
 }
 .head-prof{
     width: 100%;
@@ -557,6 +559,113 @@ body::-webkit-scrollbar{
 }
 .right-links nav .prof-acc-con:hover > .prof-float-cont{
     display: block;
+}
+
+.notification-container{
+    width: 300px;
+    height: 400px;
+    background-color: #3F3B82;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+}
+.date-con{
+    height: 100px;
+    width: 100%;
+    position: relative;
+}
+.yr-con,.mon-con,.day-con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+.yr-con{
+    width: 80px;
+    height: 40px;
+    background-color: #7D2929;
+    border-top-left-radius: 30px;
+    box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform: translateX(-120%);
+}
+.mon-con{
+    width: 130px;
+    height: 30px;
+    background-color: #74125C;
+    border-top-right-radius: 30px;
+    box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform: translateX(-18%);
+    font-size: 18px;
+}
+.day-con{
+    width: 60px;
+    height: 40px;
+    background-color: #7D2968;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-28%);
+}
+.notif-con{
+    width: 100%;
+    height: calc(100% - 130px);
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+.notif-con p{
+    font-size: 18px;
+    color: #B8B8B8;
+}
+.notif-item-con{
+    width: 90%;
+    height: 50px;
+    background-color: #2F2C61;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding-left: 11px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.notif-item-con:hover{
+    background-color: #782b86;
+}
+.pack-name-con{
+    height: 50px;
+    width: 80%;
+    position: relative;
+}
+.notif-item-con p{
+    color: white;
+    font-size: 13px;
+    padding-left: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.not-post-date{
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    font-size: 13px;
+    color: #B8B8B8;
 }
 
 

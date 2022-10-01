@@ -52,7 +52,7 @@ document.getElementById("nav-container").innerHTML =
 
 document.getElementById("footer").innerHTML =
                 `<div class="footer col-lg-12 col-md-12 col-sm-12">
-                    <span style="color: white; font-size: 15px;">Copyright 2022, BAJEROBeats</span>
+                    <span style="color: white; font-size: 15px;">© BAJEROBeats `+ new Date().getFullYear();+`</span>
                 </div>`;
 
 var drpNavContents = document.getElementById("drpContents");

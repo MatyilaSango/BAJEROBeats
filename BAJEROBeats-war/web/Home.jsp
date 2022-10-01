@@ -10,13 +10,13 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<!--
+
 <%
     if(session.getAttribute("username")==null){
         response.sendRedirect("sign in.jsp");
     }
 %>
--->
+
 <html>
     <head>
         <title>BAJEROBeats</title>
@@ -112,16 +112,23 @@ and open the template in the editor.
         <div class="row footer" id="footer">
             <script src="JS/script.js"></script>
         </div>
-        <div class="notification-container">
+        <div class="notification-container" id="notification-container">
             <div class="date-con">
                 <div class="yr-con" id="yr-con"></div>
                 <div class="mon-con" id="mon-con"></div>
                 <div class="day-con" id="day-con"></div>
             </div>
-            <div class="notif-con" id="notif-con">
+            <div class="notif-con" >
                 <p>Notifications</p>
+                <div class="notif-con-list" id="notif-con">
+
+                </div>
 
             </div>
+        </div>
+        <div class="open-close-notif-con" >
+            <img id="open-close-notif-con" src="icons/icons8_right_96px.png" width="30px" height="30px" alt="pic"/>
+            <p>Open/close notifications!</p>
         </div>
     </div>
     <script src="JS/previewTracks.js"></script>

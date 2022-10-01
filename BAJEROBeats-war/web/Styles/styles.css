@@ -571,6 +571,7 @@ body::-webkit-scrollbar{
     transform: translateY(-50%);
     border-bottom-left-radius: 30px;
     border-top-left-radius: 30px;
+    display: block;
 }
 .date-con{
     height: 100px;
@@ -621,11 +622,23 @@ body::-webkit-scrollbar{
 .notif-con{
     width: 100%;
     height: calc(100% - 130px);
-    overflow: hidden;
     box-sizing: border-box;
     padding-top: 20px;
     padding-left: 30px;
 }
+.notif-con-list{
+    height: calc(100% - 25px);
+    width: 100%;
+    overflow-y: scroll;
+    padding-left: 20PX;
+    padding-top: 20px;
+    margin-left: -20px;
+    margin-top: -10px;
+}
+.notif-con-list::-webkit-scrollbar{
+    scroll-behavior: smooth;
+}
+
 .notif-con p{
     font-size: 18px;
     color: #B8B8B8;
@@ -643,6 +656,7 @@ body::-webkit-scrollbar{
     position: relative;
     cursor: pointer;
     margin-bottom: 15px;
+    box-shadow: 0px 0px 16px 3px rgba(0, 0, 0, 0.3);
 }
 .notif-item-con:hover{
     background-color: #782b86;
@@ -666,6 +680,22 @@ body::-webkit-scrollbar{
     top: 0px;
     font-size: 13px;
     color: #B8B8B8;
+}
+.open-close-notif-con{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0px;
+    top: 50px;
+}
+.open-close-notif-con p{
+    color: #bdbdbd;
+    font-size: 13px;
+    display: none;
+    margin-left: 20px;
+}
+.open-close-notif-con:hover > p{
+    display: block;
 }
 
 

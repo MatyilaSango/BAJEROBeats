@@ -52,7 +52,7 @@ public class ProductsDao {
      * @param productName
      * @return product
      */
-    public Products getProductFromproductName(String productName){
+    public Products getProductByproductName(String productName){
         EntityManager em = EntityManagerFactoryHandler.getEntityManagerFactory().createEntityManager();
         return em.createQuery("SELECT u FROM Products u WHERE u.name = :name", Products.class)
                 .setParameter("name", productName)

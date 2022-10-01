@@ -43,4 +43,5 @@ public class NoficationsDao {
         EntityManager em = EntityManagerFactoryHandler.getEntityManagerFactory().createEntityManager();
         return em.createNamedQuery("Notifications.findAll", Notifications.class).getResultList();
     }
+    
 }

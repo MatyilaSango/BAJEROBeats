@@ -1,3 +1,15 @@
+var JSONdata = document.getElementById("fetchData").innerHTML;
+const mediaJSON = JSON.parse(JSONdata);
+
+const prdName = document.getElementById("prdName");
+prdName.innerHTML = mediaJSON.name;
+
+const prdDate = document.getElementById("prdDate");
+prdDate.innerHTML = mediaJSON.dateCreated;
+
+const prdCost = document.getElementById("prdCost");
+prdCost.innerHTML = mediaJSON.cost;
+
 
 var plyBtn1 = document.getElementById("playPause-btn1");
 var plyBtn2 = document.getElementById("playPause-btn2");
@@ -37,13 +49,13 @@ function stop(music){
 var i=0
 for(i; i<btns.length; i++){
     wavesurfers[i] = WaveSurfer.create({
-    container: previews[i],
-    waveColor: 'black',
-    progressColor: 'red',
-    height: 40,
-    barWidth: 1,
-    barRadius: 1,
-    responsive: true
+        container: previews[i],
+        waveColor: 'black',
+        progressColor: 'red',
+        height: 40,
+        barWidth: 1,
+        barRadius: 1,
+        responsive: true
     });
 
     wavesurfers[i].load(songLinks[i]);
@@ -99,7 +111,7 @@ plyBtn3.onclick = function(){
 }
 
 //4
-    
+
 plyBtn4.onclick = function(){
     if(plyBtn4.src.includes("Play")){
         stop(isPlaying);
@@ -113,5 +125,5 @@ plyBtn4.onclick = function(){
     }
 
 }
-    
+
 

@@ -628,7 +628,7 @@ body::-webkit-scrollbar{
 }
 .notif-con-list{
     height: calc(100% - 25px);
-    width: 100%;
+    width: 110%;
     overflow-y: scroll;
     padding-left: 20PX;
     padding-top: 20px;
@@ -644,7 +644,7 @@ body::-webkit-scrollbar{
     color: #B8B8B8;
 }
 .notif-item-con{
-    width: 90%;
+    width: 95%;
     height: 50px;
     background-color: #2F2C61;
     border-radius: 15px;
@@ -662,23 +662,24 @@ body::-webkit-scrollbar{
     background-color: #782b86;
 }
 .pack-name-con{
-    height: 50px;
+    height: 30px;
     width: 80%;
     position: relative;
+    overflow: hidden;
+    top: 12px;
+    display: flex;
+    align-items: center;
 }
 .notif-item-con p{
     color: white;
-    font-size: 13px;
+    font-size: 12px;
     padding-left: 5px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
 }
 .not-post-date{
     position: absolute;
     right: 10px;
     top: 0px;
-    font-size: 13px;
+    font-size: 11px;
     color: #B8B8B8;
 }
 .open-close-notif-con{

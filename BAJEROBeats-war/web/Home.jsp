@@ -29,6 +29,7 @@ and open the template in the editor.
         <script src="https://unpkg.com/wavesurfer.js"></script>
     </head>
     <body>
+    <div id="fetchData" style="display: none">${latestMediaJSON}</div>
     <div class="wrapper">
         <div class="row nav-container justify-content-center" id="nav-container">
             <script src="JS/script.js"></script>
@@ -39,11 +40,11 @@ and open the template in the editor.
                     <div class="prdct-txt">
                         <span style="font-size: 15px;"><b>NEW PRODUCT:</b></span><br>
                     </div>
-                    <div class="pn">
-                        <span style="font-size: 20px;"><b>${productName}</b></span><br>
+                    <div class="pn" >
+                        <b><span id="prdName" style="font-size: 20px;"></span></b><br>
                     </div>
                     <div class="date-div">
-                        <span style="font-size: 15px;">%=${dateCreated}</span>
+                        <span id="prdDate" style="font-size: 13px;"></span>
                     </div>
                     <div class="content-image-div prod">
                         <div class="sale-tag">
@@ -59,8 +60,8 @@ and open the template in the editor.
                                 <div class="BUNDLE-KIT">
                                     <span><b>BUNDLE KIT</b></span>
                                 </div>
-                                <div class="free-d">
-                                    <span style="color: red; font-size: 13px">${cost}</span>
+                                <div class="free-d" >
+                                    <span id="prdCost" style="color: red; font-size: 13px"></span>
                                 </div>
                                 <input type="button" class="btn-download" value="ADD TO CART" />
 
@@ -131,7 +132,8 @@ and open the template in the editor.
             <p>Open/close notifications!</p>
         </div>
     </div>
-    <script src="JS/previewTracks.js"></script>
+    <script src="JS/HomeLatestMedia.js"></script>
     <script src="JS/notifications-script.js"></script>
+    <>
     </body>
 </html>

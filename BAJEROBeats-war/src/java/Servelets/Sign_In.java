@@ -9,8 +9,10 @@ import DAOs.ProductsDao;
 import DAOs.UserDao;
 import Entities.Products;
 import Entities.User;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import javax.persistence.NoResultException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -60,9 +62,13 @@ public class Sign_In extends HttpServlet {
                 //Retrieving latest produt.
                 ProductsDao pdao = new ProductsDao();
                 Products product = pdao.readAllProducts().get(0);
-                request.setAttribute("productName", product.getName());
-                request.setAttribute("dateCreated", product.getDateCreated().toString());
-                request.setAttribute("cost", product.getCost());
+                
+                //Products product = new Products(0, "Paradise expansion pack", 500, 2500, "https://bajero.com/paradise-expansion-pack.jpg", "https://bajero.com/paradise-expansion-pack.zip", new Date());
+                
+                Gson gson = new Gson();
+                String latestMediaJSON = gson.toJson(product, Products.class);
+                
+                request.setAttribute("latestMediaJSON", latestMediaJSON);
                 
                 request.getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
                 

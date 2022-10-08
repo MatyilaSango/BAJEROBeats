@@ -1,5 +1,5 @@
 var JSONnotif = document.getElementById("fetchData").innerHTML;
-const notifJSON = JSON.parse(JSONnotif);
+//const notifJSON = JSON.parse(JSONnotif);
 
 let yearCon = document.getElementById("yr-con");
 let monCon = document.getElementById("mon-con");
@@ -8,11 +8,14 @@ let notifCon = document.getElementById("notif-con");
 let openCloseNotif = document.getElementById("open-close-notif-con");
 let notificationCon =  document.getElementById("notification-container");
 
-let date = new Date();
-yearCon.innerHTML = "2022";
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-monCon.innerHTML = months[date.getMonth()];
-dayCon.innerHTML = date.getDate();
+setInterval(() =>{
+    let date = new Date();
+    yearCon.innerHTML = date.getFullYear();
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    monCon.innerHTML = months[date.getMonth()];
+    dayCon.innerHTML = date.getDate();
+}, 1000);
+
 
 for (var i=0; i<3; i++){
     notifCon.innerHTML +=

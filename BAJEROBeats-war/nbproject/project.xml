@@ -23,6 +23,10 @@
                 <library dirs="200">
                     <file>${libs.GlassFish Server JAX-RS.classpath}</file>
                 </library>
+                <library dirs="200">
+                    <file>${file.reference.gson-2.9.1.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
             </web-module-libraries>
             <web-module-additional-libraries/>
             <source-roots>
